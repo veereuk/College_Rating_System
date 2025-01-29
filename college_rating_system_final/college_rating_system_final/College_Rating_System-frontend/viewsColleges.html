@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Colleges</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        nav {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .colleges-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .college-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .college-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-list li button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .college-list li button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .modal.hidden {
+            display: none;
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal-content form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .modal-content form input,
+        .modal-content form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .modal-content form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .modal-content form button:hover {
+            background-color: #0056b3;
+        }
+
+        .modal-content button[type="button"] {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .modal-content button[type="button"]:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="viewsColleges.html">View Colleges</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <section class="colleges-section">
+        <h1>View Colleges</h1>
+        <p>Explore the list of colleges and rate them below:</p>
+
+        <div class="search-bar">
+            <input type="text" id="search-colleges" placeholder="Search for a college by name..." oninput="filterColleges()" />
+        </div>
+
+        <ul id="college-list" class="college-list">
+            <li>
+                K.S. Institute of Technology
+                <button onclick="openRatePage('K.S. Institute of Technology')">Rate College</button>
+            </li>
+            <li>
+                RV College of Engineering
+                <button onclick="openRatePage('RV College of Engineering')">Rate College</button>
+            </li>
+            <li>
+                PES University
+                <button onclick="openRatePage('PES University')">Rate College</button>
+            </li>
+            <li>
+                MS Ramaiah Institute of Technology
+                <button onclick="openRatePage('MS Ramaiah Institute of Technology')">Rate College</button>
+            </li>
+        </ul>
+        
+    </section>
+
+    <div id="rating-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Rate <span id="college-name"></span></h2>
+            <form id="rating-form">
+                <label for="faculty-rating">Faculty Quality Rating (out of 5):</label>
+                <input type="number" id="faculty-rating" min="1" max="5" step="0.1" required><br><br>
+
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" placeholder="Leave your feedback..."></textarea><br><br>
+
+                <button type="submit">Submit Rating</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openRatePage(collegeId) {
+    // Redirect to the rate-college.html page with the collegeId in the query string
+    window.location.href = `rate-college.html?id=${collegeId}`;
+}
+
+        function filterColleges() {
+            const searchInput = document.getElementById('search-colleges').value.toLowerCase();
+            const collegeList = document.getElementById('college-list');
+            const colleges = collegeList.getElementsByTagName('li');
+
+            for (let college of colleges) {
+                const collegeName = college.getElementsByTagName('span')[0].textContent.toLowerCase();
+                if (collegeName.includes(searchInput)) {
+                    college.style.display = '';
+                } else {
+                    college.style.display = 'none';
+                }
+            }
+        }
+
+        function rateCollege(collegeId) {
+            const collegeName = document.querySelector(`#college-list li:nth-child(${collegeId}) span`).textContent;
+            document.getElementById('college-name').textContent = collegeName;
+
+            const modal = document.getElementById('rating-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('rating-modal');
+            modal.classList.add('hidden');
+        }
+
+        document.getElementById('rating-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const facultyRating = document.getElementById('faculty-rating').value;
+            const feedback = document.getElementById('feedback').value;
+            const collegeName = document.getElementById('college-name').textContent;
+
+            const response = await fetch('http://localhost:8080/api/ratings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    college: { collegeName },
+                    facultyQualityRating: facultyRating,
+                    feedback,
+                }),
+            });
+
+            if (response.ok) {
+                alert('Thank you for your rating!');
+                closeModal();
+            } else {
+                alert('Failed to submit rating. Please try again.');
+            }
+        });
+    </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get the collegeId from the URL
+            const params = new URLSearchParams(window.location.search);
+            const collegeId = params.get("id");
+
+            if (collegeId) {
+                // Example data for colleges
+                const colleges = {
+                    1: "K.S. Institute of Technology",
+                    2: "RV College of Engineering",
+                    3: "PES University",
+                    4: "MS Ramaiah Institute of Technology",
+                };
+
+                // Set the college name
+                document.getElementById("college-name").textContent = colleges[collegeId] || "Unknown College";
+            } else {
+                alert("No college ID found in the URL.");
+            }
+        });
+    </script>
+</body>
+</html>

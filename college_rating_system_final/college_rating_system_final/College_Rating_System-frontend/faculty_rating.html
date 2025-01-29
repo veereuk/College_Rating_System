@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Your College</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 50px auto; }
+        .college { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rate Your College</h1>
+        <div id="colleges"></div>
+        <h2>Leave a Rating</h2>
+        <form id="ratingForm">
+            <select id="collegeSelect">
+                <option value="">Select a College</option>
+            </select><br><br>
+            <label>Faculty Quality Rating (out of 5):</label><br>
+            <input type="number" id="facultyRating" min="1" max="5" step="0.1" required><br><br>
+            <label>Feedback:</label><br>
+            <textarea id="feedback"></textarea><br><br>
+            <button type="submit">Submit Rating</button>
+        </form>
+    </div>
+    <script>
+        const API_URL = 'http://localhost:8080/api';
+
+        // Fetch colleges and populate dropdown
+        async function loadColleges() {
+            const response = await fetch(`${API_URL}/colleges`);
+            const colleges = await response.json();
+            const collegeSelect = document.getElementById('collegeSelect');
+            colleges.forEach(college => {
+                const option = document.createElement('option');
+                option.value = college.collegeId;
+                option.textContent = college.collegeName;
+                collegeSelect.appendChild(option);
+            });
+        }
+
+        // Handle rating submission
+        document.getElementById('ratingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const collegeId = document.getElementById('collegeSelect').value;
+            const facultyRating = document.getElementById('facultyRating').value;
+            const feedback = document.getElementById('feedback').value;
+
+            if (!collegeId || !facultyRating) {
+                alert('Please fill all the fields.');
+                return;
+            }
+
+            const response = await fetch(`${API_URL}/ratings`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    college: { collegeId },
+                    facultyQualityRating: facultyRating,
+                    feedback
+                })
+            });
+
+            if (response.ok) {
+                alert('Thank you for your rating!');
+                document.getElementById('ratingForm').reset();
+            } else {
+                alert('Failed to submit rating.');
+            }
+        });
+
+        // Load colleges on page load
+        loadColleges();
+    </script>
+</body>
+</html>

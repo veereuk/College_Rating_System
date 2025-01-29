@@ -1,0 +1,633 @@
+/* Reset and Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav.navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header.header {
+    background: linear-gradient(135deg, #ffec7e, #b1fc25); /* Gradient with pink and blue */
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #fff; /* White text for better contrast */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+}
+
+  header.header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  header .header-img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .search-section {
+    padding: 2rem;
+    text-align: center;
+    background: #f4f4f4;
+  }
+  
+  .search-bar select,
+  .search-bar button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+  
+  button.search-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-website {
+    padding: 2rem;
+  }
+  
+  .add-website h2 {
+    text-align: center;
+  }
+  
+  #website-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  #website-list {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  /* styles.css */
+/* Basic styles for layout and design */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+section {
+  padding: 20px;
+}
+
+.call-to-action a,
+button {
+  background-color: #eff1f3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e9ebee;
+}
+
+/* Add more styles as needed */
+/* Dropdown styling */
+.navbar .dropdown .dropbtn {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Add this CSS to your stylesheet */
+.nav-links li a.active {
+  color: #FF6347; /* Example color when active, you can change it */
+  font-weight: bold;
+}
+
+
+/* Style for the About section link */
+.nav-links li a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333;
+  display: block;
+}
+
+.nav-links li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add this CSS for active class when clicked */
+.nav-links li a.active {
+  color: #FF6347; /* Change to your preferred color */
+  font-weight: bold;
+}
+
+/* Dropdown styles */
+.navbar .dropdown .dropbtn {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Styling for the Colleges dropdown */
+.navbar .dropdown .dropbtn {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Introduction to the Rating System */
+/* FAQ Section Styling */
+.faq-section {
+  background-color: #f9f9f9; /* Light gray background for the FAQ section */
+  padding: 20px;
+  border: 1px solid #ddd; /* Light border for structure */
+  border-radius: 8px;
+  margin: 20px auto; /* Center the section on the page */
+  max-width: 800px; /* Restrict the width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.faq-section h3 {
+  font-size: 1.8em;
+  color: #333; /* Dark text color for visibility */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq {
+  margin-bottom: 15px; /* Space between each FAQ */
+  padding: 15px;
+  border: 1px solid #ccc; /* Light border for FAQs */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* White background for contrast */
+}
+
+.faq h3 {
+  font-size: 1.2em;
+  color: #007bff; /* Blue color for FAQ headings */
+  cursor: pointer; /* Cursor pointer for interactivity */
+  margin: 0;
+}
+
+.faq h3:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.faq p {
+  font-size: 1em;
+  color: #555; /* Slightly muted color for FAQ answers */
+  margin-top: 10px;
+  display: none; /* Initially hide the answers */
+}
+
+/* Expandable FAQ Interactivity */
+.faq.open p {
+  display: block; /* Show the answer when the FAQ is opened */
+}
+/* FAQ Section Styling */
+.faq-section {
+  background-color: #f9f9f9; /* Light gray background for the FAQ section */
+  padding: 20px;
+  border: 1px solid #ddd; /* Light border for structure */
+  border-radius: 8px;
+  margin: 20px auto; /* Center the section on the page */
+  max-width: 800px; /* Restrict the width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.faq-section h3 {
+  font-size: 1.8em;
+  color: #333; /* Dark text color for visibility */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq {
+  margin-bottom: 15px; /* Space between each FAQ */
+  padding: 15px;
+  border: 1px solid #ccc; /* Light border for FAQs */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* White background for contrast */
+}
+
+.faq h3 {
+  font-size: 1.2em;
+  color: #007bff; /* Blue color for FAQ headings */
+  cursor: pointer; /* Cursor pointer for interactivity */
+  margin: 0;
+}
+
+.faq h3:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.faq p {
+  font-size: 1em;
+  color: #555; /* Slightly muted color for FAQ answers */
+  margin-top: 10px;
+  display: none; /* Initially hide the answers */
+}
+
+/* Expandable FAQ Interactivity */
+.faq.open p {
+  display: block; /* Show the answer when the FAQ is opened */
+}
+
+
+/* Enhanced Rating System Intro Section */
+.rating-system-intro {
+  background: linear-gradient(135deg, hsl(240, 3%, 93%), #2575fc); /* Gradient background */
+  padding: 40px;
+  border-radius: 15px; /* Smooth rounded corners */
+  max-width: 900px; /* Wider for better spacing */
+  margin: 30px auto; /* Center the section */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  color: #fff; /* White text for contrast */
+  text-align: center; /* Center-align content */
+}
+
+.rating-system-intro h2 {
+  font-size: 2.5em;
+  color: #ffd700; /* Gold color for emphasis */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase for a bold effect */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+
+.rating-system-intro p {
+  font-size: 1.3em;
+  line-height: 1.8; /* Improve readability */
+  margin-bottom: 20px;
+  color: #f0f0f0; /* Softer white for paragraphs */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.rating-system-intro p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph */
+}
+
+.rating-system-intro a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #ffd700; /* Gold button */
+  color: #2c3e50; /* Dark text for contrast */
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded button corners */
+  text-decoration: none; /* Remove underline */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth hover effect */
+}
+
+.rating-system-intro a:hover {
+  background-color: #ffa500; /* Darker gold on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+
+/* Top-Rated Colleges Section */
+section.top-rated-colleges {
+  background-color: #f9f9f9; /* Light gray background for contrast */
+  padding: 2rem;
+  border-radius: 10px; /* Rounded corners for modern feel */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Arial', sans-serif;
+}
+
+section.top-rated-colleges h3 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Spacing for a cleaner look */
+}
+
+.college-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Space between cards */
+  flex-wrap: wrap; /* Wrap cards if screen is small */
+}
+
+.college-card {
+  background-color: #fff; /* White card background */
+  border: 1px solid #ddd; /* Subtle border for separation */
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px; /* Fixed width for consistent design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for pop-out effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.college-card:hover {
+  transform: translateY(-10px); /* Lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.college-card h3 {
+  color: #2575fc; /* Highlighted blue title */
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.college-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.college-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.college-card ul li {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  padding-left: 10px;
+  position: relative;
+}
+
+.college-card ul li::before {
+  content: '✔';
+  color: #2575fc; /* Icon color */
+  position: absolute;
+  left: 0;
+}
+
+.details-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #2575fc;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: #1a5cbf; /* Darker blue on hover */
+}
+
+
+/* Ratings Chart Section */
+section.ratings-chart {
+  background: linear-gradient(135deg, #eef2f3, #ffffff); /* Subtle gradient for a modern look */
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px; /* Centered and responsive */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  font-family: 'Roboto', sans-serif;
+}
+
+section.ratings-chart h3 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+}
+
+section.ratings-chart p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6; /* Improves readability */
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+section.ratings-chart p:last-of-type {
+  font-style: italic; /* Emphasizes the last note for better impact */
+  color: #444;
+}
+
+section.ratings-chart {
+  transition: transform 0.3s ease-in-out;
+}
+
+section.ratings-chart:hover {
+  transform: translateY(-10px); /* Adds an interactive hover effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow effect on hover */
+}

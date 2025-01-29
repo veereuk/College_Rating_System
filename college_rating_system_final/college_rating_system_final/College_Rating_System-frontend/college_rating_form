@@ -1,0 +1,25 @@
+<section class="rate-college-form">
+  <h2>Rate a College</h2>
+  <form action="/submit-rating" method="POST">
+    <div class="form-group">
+      <label for="college-name">College Name</label>
+      <input type="text" id="college-name" name="college_name" required placeholder="Enter College Name">
+    </div>
+    <div class="form-group">
+      <label for="faculty-quality">Faculty Quality</label>
+      <select id="faculty-quality" name="faculty_quality" required>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+    </div>
+    <!-- Repeat similar blocks for other criteria -->
+    <div class="form-group">
+      <label for="comments">Additional Comments</label>
+      <textarea id="comments" name="comments" placeholder="Share your experience..."></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit Rating</button>
+  </form>
+</section>

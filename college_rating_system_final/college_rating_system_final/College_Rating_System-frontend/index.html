@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Ideal College Based on Real Student Ratings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">College Rating System</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      
+      <li><a href="about.html" onclick="showAboutSection()">About</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Rankings</a>
+        <div class="dropdown-content">
+          <a href="#" target="_blank">Top 10 Colleges by Faculty Quality</a>
+          <a href="#" target="_blank">Top 10 Colleges by Campus Infrastructure</a>
+          <a href="#" target="_blank">Top 10 Colleges by Placement Success</a>
+          <a href="#" target="_blank">Top 10 Colleges by Curriculum Relevance</a>
+          <a href="#" target="_blank">Top 10 Colleges by Student Support</a>
+          <a href="#" target="_blank">Top 10 Colleges Universities</a>
+          <a href="#" target="_blank">Top 10 PublicColleges</a>
+          <a href="#" target="_blank">Top 10 Government Colleges</a>
+          <a href="#" target="_blank">Top 10 Colleges for Engineering</a>
+          <a href="#" target="_blank">Top 10 Colleges for Medical Studies</a>
+          <a href="#" target="_blank">Top 10 Colleges for Business</a>
+        </div>  
+      
+      <li class="dropdown">
+        <a href="http://localhost:8080/api/colleges" class="dropbtn">Colleges</a>
+        <div class="dropdown-content">
+            <a href="viewsColleges.html">View Colleges</a>
+            <a href="search-colleges.html">Search Colleges</a>
+            <a href="add-college.html">Add a College</a>
+            <a href="top-rated-colleges.html">Top Rated Colleges</a>
+            <a href="compare-colleges.html">Compare Colleges</a>
+            <a href="filter-colleges.html">Filter by Category</a>
+        </div>
+    </li>
+    
+      
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Rate a College</a>
+        <div class="dropdown-content">
+          <a href="rate-college.html" target="_blank">Rate Us</a>
+          
+          <a href="rating-for.html" target="_blank"> Average Rating</a>
+        </div>  
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="loginpage.html" class="login-btn">Login</a></li>
+      <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+
+    </ul>
+</nav>
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Welcome to the College Rating System!</h1>
+    <h3>Your voice matters! Rate your college based on key factors like faculty, campus, placements, and more.</h3>
+
+    
+  </header>
+
+
+
+  <!-- Search Section -->
+   
+<section class="search-section">
+  <div class="search-bar">
+    <select id="study-level">
+      <option>Study Level</option>
+      <option value="Undergraduate">Undergraduate</option>
+      <option value="Postgraduate">Postgraduate</option>
+    </select>
+    <select id="rating-criteria">
+      <option>Rating Criteria</option>
+      <option value="Faculty Quality">Faculty Quality</option>
+      <option value="Campus Infrastructure">Campus Infrastructure</option>
+      <option value="Placement Success">Placement Success</option>
+      <option value="Curriculum Relevance">Curriculum Relevance</option>
+      <option value="Overall Rate">Overall Rate</option>
+    </select>
+    <select id="college-type">
+      <option>College Type</option>
+      <option value="Private">Private</option>
+      <option value="Public">Public</option>
+      <option value="Government">Government</option>
+    </select>
+    <select id="subject">
+      <option>Subject</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Medical">Medical</option>
+      <option value="Arts">Arts</option>
+      <option value="Business">Business</option>
+    </select>
+    <select id="placement-rate">
+      <option>Placement Rate</option>
+      <option value="Above 90%">Above 90%</option>
+      <option value="80%-90%">80%-90%</option>
+      <option value="Below 80%">Below 80%</option>
+    </select>
+    <button class="search-btn" onclick="performSearch()">Search</button>
+  </div>
+</section>
+
+<script>
+  function performSearch() {
+    // Get the values from the dropdowns
+    var studyLevel = document.getElementById('study-level').value;
+    var ratingCriteria = document.getElementById('rating-criteria').value;
+    var collegeType = document.getElementById('college-type').value;
+    var subject = document.getElementById('subject').value;
+    var placementRate = document.getElementById('placement-rate').value;
+    
+    // Construct the search query string
+    var queryString = `studyLevel=${studyLevel}&ratingCriteria=${ratingCriteria}&collegeType=${collegeType}&subject=${subject}&placementRate=${placementRate}`;
+    
+    // Send the query to the server via GET request or handle it as needed
+    window.location.href = `/search?${queryString}`;
+  }
+</script>
+  
+<div class="container">
+  <div class="card"> 
+    <h3>Top-Rated Colleges 2025</h3>
+    <p>Explore the highest-rated colleges based on faculty, infrastructure, and placements.</p>
+    <a href="top-rated-colleges.html" class="explore-btn">Explore →</a>
+  </div>
+
+  <div class="card">
+    <h3>Compare Colleges</h3>
+    <p>Compare colleges side-by-side based on ratings, feedback, and placement success.</p>
+    <a href="compare-colleges.html" class="explore-btn">Compare →</a>
+  </div>
+
+  <div class="card">
+    <h3>Rate a College</h3>
+    <p>Share your experience and help others by rating a college you’ve attended.</p>
+    <a href="rate-college.html" class="explore-btn">Rate Now →</a>
+  </div>
+
+  <div class="card">
+    <h3>Search Colleges</h3>
+    <p>Find colleges by name, location, or ratings. Your ideal college is just a search away.</p>
+    <a href="search-colleges.html" class="explore-btn">Search →</a>
+  </div>
+
+  <div class="card">
+    <h3>Popular Subjects</h3>
+    <p>Discover colleges excelling in Computer Science, Engineering, Medicine, and more.</p>
+    <a href="popular-subjects.html" class="explore-btn">Explore →</a>
+  </div>
+</div>
+
+
+
+<section class="rating-system-intro">
+  <h2>College Rating System</h2>
+  <p>
+    Our College Rating System allows students to explore and compare colleges based on multiple criteria. Students can rate colleges based on faculty quality, campus infrastructure, placement success, curriculum relevance, and student support. 
+  </p>
+  <p>
+    Use our system to make informed decisions about your higher education and find the best college that suits your needs.
+  </p>
+</section>
+
+
+
+<section class="top-rated-colleges">
+  <h3>Top-Rated Colleges</h3>
+  <div class="college-cards-wrapper">
+    <div class="college-card">
+      <h3>BMS College of Engineering</h3>
+      <p>Average Rating: 4.5/5</p>
+      <ul>
+        <li>Faculty Quality: 4.7</li>
+        <li>Campus Infrastructure: 4.6</li>
+        <li>Placement Success: 4.8</li>
+        <li>Curriculum Relevance: 4.4</li>
+        <li>Student Support: 4.5</li>
+      </ul>
+      <a href="bms-college-details.html" class="details-btn">View Details</a>
+    </div>
+    <div class="college-card">
+      <h3>RV College of Engineering</h3>
+      <p>Average Rating: 4.3/5</p>
+      <ul>
+        <li>Faculty Quality: 4.5</li>
+        <li>Campus Infrastructure: 4.4</li>
+        <li>Placement Success: 4.7</li>
+        <li>Curriculum Relevance: 4.2</li>
+        <li>Student Support: 4.1</li>
+      </ul>
+      <a href="rv-college-details.html" class="details-btn">View Details</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="ratings-chart">
+  <h3>College Ratings Overview</h3>
+  <p>
+    Explore the performance and ratings of top engineering colleges based on 
+    student reviews and various key metrics, including faculty quality, campus 
+    infrastructure, placement success, and curriculum relevance.
+  </p>
+  <p>"Choosing the right college is a significant decision for every student. Our College Ratings Overview provides a clear comparison 
+    of the top-rated colleges based on key metrics, helping you make an informed choice."</p>
+  <p>
+    These ratings help prospective students make informed decisions when choosing the right college for their future.
+    These insights are derived from verified student reviews and academic performance trends over the last academic year
+  </p>
+</section>
+
+
+
+<section class="faq-section">
+  <h3>Frequently Asked Questions</h3>
+  <div class="faq">
+    <h3>How are ratings calculated?</h3>
+    <p>Ratings are based on aggregated scores submitted by students across various criteria like faculty quality and placement success.</p>
+  </div>
+  <div class="faq">
+    <h3>Can I edit my rating after submission?</h3>
+    <p>Yes, you can update your rating by logging into your account and editing your feedback.</p>
+  </div>
+</section>

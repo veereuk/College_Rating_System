@@ -1,0 +1,374 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, hsl(268, 24%, 85%), #2575fc); /* Stylish gradient background */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Login Container */
+.login-container {
+  background: #eae7e7f2; /* Slightly transparent white */
+  color: #333;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Modern shadow */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.login-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #6a11cb; /* Gradient color theme */
+  font-weight: bold;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #6a11cb; /* Focus color matching the theme */
+  outline: none;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.2); /* Subtle glow effect */
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Sign-up Link */
+.signup-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #6a11cb; /* Matching theme color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px;
+  }
+
+  .login-container h1 {
+    font-size: 2rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .login-btn {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient background */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Sign-Up Container */
+.signup-container {
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  color: #333;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Modern shadow */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.signup-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6b6b; /* Theme color */
+  font-weight: bold;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #ff6b6b; /* Focus color matching the theme */
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.2); /* Subtle glow effect */
+}
+
+/* Sign-Up Button */
+.signup-btn {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #ff6b6b, #fad0c4); /* Gradient button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(90deg, #fad0c4, #ff6b6b); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Login Link */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #ece5e5; /* Matching theme color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 30px;
+  }
+
+  .signup-container h1 {
+    font-size: 2rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .signup-btn {
+    font-size: 1rem;
+  }
+}
+
+
+.contact-us {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.contact-info, .map, .contact-form {
+  margin-bottom: 30px;
+}
+
+.contact-info h2, .map h2, .contact-form h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.contact-info p, .contact-info a {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-info a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.map iframe {
+  border-radius: 10px;
+}
+
+.contact-form form div {
+  margin-bottom: 15px;
+}
+
+.contact-form form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form form input, .contact-form form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-form form textarea {
+  resize: none;
+}
+
+.contact-form form button {
+  width: 100%;
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.contact-form form button:hover {
+  background: #0056b3;
+}
+
+
+
+/* view colleges*/
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* View Colleges Section */
+.colleges-section {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.colleges-section h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.college-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.college-list li {
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}

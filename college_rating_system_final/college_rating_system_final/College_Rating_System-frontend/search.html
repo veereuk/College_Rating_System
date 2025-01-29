@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <li>
+        
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search by College Name or Location" required>
+            <button type="submit">Search</button>
+        </form>
+    </li>
+
+    <div th:if="${searchResults}">
+        <ul>
+            <li th:each="college : ${searchResults}">
+                <p th:text="${college.name}"></p>
+                <p th:text="${college.location}"></p>
+                <p th:text="${college.rating}"></p>
+            </li>
+        </ul>
+    </div>
+
+    <div th:if="${#lists.isEmpty(searchResults)}">
+        <p>No colleges found matching your search criteria.</p>
+    </div>
+</body>
+</html>
