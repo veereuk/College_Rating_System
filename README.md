@@ -1,1 +1,1 @@
-# College_Rating_System
+The College Rating System is a full-stack web application where students can rate engineering colleges based on factors like faculty, infrastructure, and placements. The frontend, built with HTML, CSS, and JavaScript, provides an interactive UI for login, signup, and rating submissions. The backend, developed using Java, handles user authentication, data storage, and API interactions. The system allows students to search for colleges, submit ratings, and view feedback dynamically. 🚀
